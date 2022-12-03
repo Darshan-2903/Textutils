@@ -18,21 +18,21 @@ export default function Textform(props) {
   const handledelClick=()=>{
     let newText=("");
     setText(newText);
-  }
+  };
   const handledcopy=()=>{
     var txt=document.getElementById("exampleFormControlTextarea1");
     txt.select();
     navigator.clipboard.writeText(txt.value);
 
-  }
+  };
   const handleExtraSpace =()=>{
-    let newText =text.split(/[ ]+/)
-    setText(newText.join(" "))
-  }
+    let newText =text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
   
  
 
-  const [text, setText] = useState();
+  const [text, setText] = useState('');
 
 
   return (
@@ -71,10 +71,10 @@ export default function Textform(props) {
       <p>{text.split(" ").length} words and {text.length} characters </p>
       <p>{0.008 * text.split(" ").length} Minutes to read</p>
       <h4>Preview</h4>
-      <p>{text}</p>
+      <p>{text.length>0?text:"Enter text to preview here"}</p>
        
       
     </div>  
     </>
   );
-}
+};
